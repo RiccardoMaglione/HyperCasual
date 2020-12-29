@@ -7,7 +7,6 @@ namespace MaglioneFramework
     public class Spawner : MonoBehaviour
     {
         Vector3 InitialPosition;
-        public GameObject Platform;
         public GameObject Wall;
         public int Ypos = 0;
         public int YWallpos = 0;
@@ -27,7 +26,7 @@ namespace MaglioneFramework
             {
                 Ypos += 3;
 
-                InitialPosition = new Vector3(Random.Range(-1f, 2f), Ypos, transform.position.z);
+                InitialPosition = new Vector3(Random.Range(-1.75f, 1.75f), Ypos, transform.position.z);
                 GameObject PlatformGo = ObjectPool.SharedInstance.GetPooledObjectWithInfo(InitialPosition, transform.rotation);
                 if (PlatformGo != null)
                 {
