@@ -10,6 +10,8 @@ namespace MaglioneFramework
         #region Variables
         public Slider SliderVolume;
         public Text VolumeTextValue;
+
+        public Text TimeBest;
         #endregion
     
         private void Start()
@@ -20,6 +22,8 @@ namespace MaglioneFramework
             AudioManager.Instance.Volume("Theme", SliderVolume);
             VolumeTextValue.text = (SliderVolume.value * 100).ToString("0");
             #endregion
+
+            TimeBest.text = PlayerPrefs.GetString("TimeBest","00:00:00");
         }
     
         #region Method

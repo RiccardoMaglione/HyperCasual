@@ -29,7 +29,7 @@ namespace MaglioneFramework
 
         public IEnumerator TimerPress()
         {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.1f);
             PlayerController.ButtonPress = false;
         }
     }

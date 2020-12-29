@@ -12,6 +12,11 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public void GoToOption()
     {
         PanelMenu.SetActive(false);

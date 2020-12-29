@@ -16,25 +16,26 @@ namespace MaglioneFramework
         public int PosMaxWall = 10;
         void Start()
         {
-            StartCoroutine(InstPlat());
+            //StartCoroutine(InstPlat());
+            InvokeRepeating("InstPlat", 0, 0.5f);
             StartCoroutine(InstPlatWall());
         }
     
-        public IEnumerator InstPlat()
+        public void InstPlat()
         {
-            while (true)
-            {
+            //while (true)
+            //{
                 Ypos += 3;
 
                 InitialPosition = new Vector3(Random.Range(-1.75f, 1.75f), Ypos, transform.position.z);
-                GameObject PlatformGo = ObjectPool.SharedInstance.GetPooledObjectWithInfo(InitialPosition, transform.rotation);
+                GameObject PlatformGo = ObjectPool.SharedInstance.GetPooledObjectWithInfo(InitialPosition, Quaternion.identity);
                 if (PlatformGo != null)
                 {
                     PlatformGo.SetActive(true);
                 }
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
                 ID++;
-            }
+            //}
         }
     
         public IEnumerator InstPlatWall()
