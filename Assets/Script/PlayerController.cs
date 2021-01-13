@@ -51,7 +51,7 @@ namespace MaglioneFramework
 
             if(ButtonPress == true)
             {
-                if (Input.touchCount > 1 && Grounded == true && ButtonPress == true)
+                if (Input.touchCount > 1 && Grounded == true && ButtonPress == true && rb.velocity.y == 0)
                 {
                     ButtonPress = false;
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -61,7 +61,7 @@ namespace MaglioneFramework
             }
             else
             {
-                if (Input.touchCount == 1 && Grounded == true)
+                if (Input.touchCount == 1 && Grounded == true && rb.velocity.y == 0)
                 {
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
